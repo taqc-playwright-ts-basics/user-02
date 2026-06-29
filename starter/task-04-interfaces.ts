@@ -32,5 +32,27 @@
 // TODO: firstCase (без owner / without owner) — export const firstCase: TestCase = ...
 
 // TODO: secondCase (з owner / with owner) — export const secondCase: TestCase = ...
+export interface TestCase {
+  id: number;
+  name: string;
+  status: "passed" | "failed" | "skipped";
+  owner?: string;
+  tags: string[];
+}
 
-export {};
+export const firstCase: TestCase = {
+  id: 1,
+  name: "Login with valid credentials",
+  status: "passed",
+  tags: ["smoke", "auth"],
+};
+
+export const secondCase: TestCase = {
+  id: 2,
+  name: "Login with invalid password",
+  status: "failed",
+  owner: "Olha",
+  tags: ["auth", "negative"],
+};
+
+
